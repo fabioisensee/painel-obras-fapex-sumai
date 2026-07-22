@@ -173,14 +173,15 @@ button{color:inherit}
 header.topo h1{max-width:790px;margin:8px 0 0;font-family:var(--serif);font-size:clamp(3.2rem,7vw,6.4rem);font-weight:400;line-height:.93;letter-spacing:-.05em;color:var(--tinta)}
 .topo-meta{padding-bottom:7px;color:var(--tinta-suave);font-size:.82rem}
 .topo-meta strong{display:block;margin-bottom:8px;color:var(--tinta);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
-.saudacao{display:grid;grid-template-columns:1fr 1.8fr;gap:56px;margin:0;padding:30px 0;border:0;border-bottom:1px solid var(--linha);border-radius:0;background:transparent;font-size:inherit}
+.saudacao{display:block;margin:0;padding:30px 0;border:0;border-bottom:1px solid var(--linha);border-radius:0;background:transparent;font-size:inherit}
 .saudacao b{font-family:var(--serif);font-size:1.45rem;font-weight:500;color:var(--petroleo)}
-.saudacao .expl{margin:0;color:var(--tinta-suave);font-size:.94rem;line-height:1.7}
+.saudacao .expl{display:none}
 
-/* síntese e indicadores */
+/* síntese */
 .sintese{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.5fr);gap:72px;padding:72px 0 50px}
 .sintese-copy p{margin-top:22px;font-family:var(--serif);font-size:clamp(1.28rem,2.2vw,1.78rem);line-height:1.45;color:var(--tinta)}
 .sintese-nota{align-self:end;padding:0 0 6px 22px;border-left:1px solid var(--ouro);font-size:.82rem;color:var(--tinta-suave)}
+.kpis:empty,.kpis[hidden],#area-alerta{display:none}
 .kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;padding:26px 0 34px;border-top:1px solid var(--tinta);border-bottom:1px solid var(--linha)}
 .kpi{min-width:0;padding:0 22px;background:transparent;border:0;border-left:1px solid var(--linha);border-radius:0}
 .kpi:first-child{padding-left:0;border-left:0}
@@ -190,10 +191,10 @@ header.topo h1{max-width:790px;margin:8px 0 0;font-family:var(--serif);font-size
 .kpi span{display:block;max-width:160px;color:var(--tinta-suave);font-size:.72rem;line-height:1.45;letter-spacing:.05em;text-transform:uppercase}
 .alerta{margin:24px 0 0;padding:16px 0 16px 22px;border:0;border-left:2px solid var(--critico);border-radius:0;background:transparent;color:var(--tinta-suave);font-size:.88rem}
 
-/* leitura analítica */
-.analise-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(300px,.55fr);gap:76px;padding:78px 0;border-bottom:1px solid var(--linha)}
+/* fluxo e processos por etapa */
+.analise-grid{display:block;padding:78px 0;border-bottom:1px solid var(--linha)}
 .barras{margin-top:30px;padding:0;background:transparent;border:0;border-radius:0}
-.linha-barra{display:grid;grid-template-columns:220px minmax(100px,1fr) 34px;align-items:center;gap:18px;margin:0;padding:10px 0;border-bottom:1px solid var(--linha);border-radius:0;cursor:pointer}
+.linha-barra{display:grid;grid-template-columns:220px minmax(100px,1fr) 34px;align-items:center;gap:18px;margin:0;padding:10px 0;border-bottom:1px solid var(--linha);border-radius:0;cursor:default}
 .linha-barra:first-child{border-top:1px solid var(--linha)}
 .linha-barra .rotulo{color:var(--tinta-suave);font-size:.8rem;text-align:left;transition:color .15s ease}
 .linha-barra:hover .rotulo{color:var(--petroleo)}
@@ -201,15 +202,17 @@ header.topo h1{max-width:790px;margin:8px 0 0;font-family:var(--serif);font-size
 .linha-barra .barra{display:block;height:5px;min-width:2px;border-radius:0;background:var(--petroleo-2);transition:background .15s ease}
 .linha-barra:hover .barra{background:var(--ouro)}
 .linha-barra .num{font-family:var(--serif);font-size:1rem;text-align:right;font-variant-numeric:tabular-nums}
-.leitura-critica{padding-top:2px}
-.leitura-lista{margin-top:30px;border-top:1px solid var(--tinta)}
-.leitura-item{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:18px 0;border-bottom:1px solid var(--linha)}
-.leitura-item .indice{font-family:var(--serif);font-size:.88rem;color:var(--ouro)}
-.leitura-item strong{display:block;margin-bottom:4px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;color:var(--tinta)}
-.leitura-item p{margin:0;color:var(--tinta-suave);font-size:.82rem;line-height:1.55}
+.leitura-critica{padding-top:58px}
+.leitura-lista{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 42px;margin-top:30px;border-top:1px solid var(--tinta)}
+.leitura-item{display:block;padding:18px 0;border-bottom:1px solid var(--linha)}
+.leitura-item .indice{display:none}
+.leitura-item strong{display:flex;justify-content:space-between;gap:18px;margin-bottom:10px;font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--petroleo)}
+.leitura-item strong span{font-family:var(--sans);font-size:.72rem;font-weight:700;color:var(--silencio)}
+.leitura-item p{margin:0;color:var(--tinta-suave);font-size:.8rem;line-height:1.55}
+.leitura-item button{margin-top:12px;padding:0;border:0;border-bottom:1px solid var(--linha-forte);background:transparent;color:var(--tinta-suave);font-size:.7rem;cursor:pointer}
 
 /* monitoramento */
-.monitoramento{padding:76px 0;border-bottom:1px solid var(--linha)}
+.monitoramento{display:none}
 .monitoramento-cab{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:end}
 .monitoramento-cab p{color:var(--tinta-suave);font-size:.92rem}
 .monitoramento-lista{margin-top:36px;border-top:1px solid var(--tinta)}
@@ -221,6 +224,7 @@ header.topo h1{max-width:790px;margin:8px 0 0;font-family:var(--serif);font-size
 .nivel.critico{color:var(--critico)}
 .nivel.atencao{color:var(--atencao)}
 .nivel.acompanhamento{color:var(--petroleo-2)}
+.marcos-vazio{padding:22px 0;border-bottom:1px solid var(--linha);color:var(--tinta-suave);font-size:.86rem;line-height:1.6}
 
 /* leitura institucional */
 .institucional{display:grid;grid-template-columns:minmax(0,.65fr) minmax(0,1.35fr);gap:80px;padding:68px 0;border-bottom:1px solid var(--linha)}
@@ -282,7 +286,7 @@ header.topo h1{max-width:790px;margin:8px 0 0;font-family:var(--serif);font-size
   .kpis{grid-template-columns:repeat(3,1fr)}
   .kpi{padding:18px;border-bottom:1px solid var(--linha)}
   .kpi:nth-child(4){padding-left:0;border-left:0}
-  .analise-grid{gap:58px}
+  .leitura-lista{grid-template-columns:1fr}
   .monitor-item{grid-template-columns:44px minmax(150px,.65fr) minmax(0,1.35fr)}
   .monitor-item .nivel{grid-column:2/-1;justify-self:start}
 }
@@ -341,8 +345,8 @@ header.topo h1{max-width:790px;margin:8px 0 0;font-family:var(--serif);font-size
     <div class="marca">FAPEX · SUMAI · UFBA</div>
     <div class="acesso-titulo">
       <div class="eyebrow" style="color:#b9cbc7;margin-bottom:18px">Relatório reservado à alta gestão</div>
-      <h1>Obras e<br>reformas</h1>
-      <p>Uma leitura executiva da carteira institucional, de seus marcos e dos pontos que requerem acompanhamento.</p>
+      <h1>Carteira de<br>processos</h1>
+      <p>Relatório executivo de acompanhamento de obras, reformas, serviços de engenharia e intervenções de infraestrutura.</p>
     </div>
     <div class="acesso-rodape"><span>Uso interno</span><span>Somente leitura</span><span>Informação cifrada</span></div>
   </section>
@@ -384,12 +388,12 @@ header.topo h1{max-width:790px;margin:8px 0 0;font-family:var(--serif);font-size
     <div class="topo-titulo">
       <div>
         <div class="eyebrow">Acompanhamento institucional</div>
-        <h1>Relatório executivo de obras e reformas</h1>
+        <h1>Relatório executivo de acompanhamento da carteira</h1>
       </div>
       <div class="topo-meta">
         <strong>Data de referência</strong>
         <span id="data-ref"></span><br>
-        Carteira consolidada para leitura da Reitoria e da alta direção da Fundação.
+        Posição consolidada para consulta da Reitoria e da alta direção da Fundação.
       </div>
     </div>
   </header>
@@ -399,49 +403,13 @@ header.topo h1{max-width:790px;margin:8px 0 0;font-family:var(--serif);font-size
     <div class="expl" id="saud-msg"></div>
   </div>
 
-  <section class="sintese" aria-labelledby="titulo-sintese">
-    <div class="sintese-copy">
-      <div class="section-kicker">01 · Síntese executiva</div>
-      <h2 class="section-title" id="titulo-sintese">Panorama consolidado</h2>
-      <p id="sintese-dinamica"></p>
-    </div>
-    <aside class="sintese-nota">Esta leitura reúne o quadro atual da carteira e destaca os pontos que merecem decisão, regularização ou acompanhamento institucional.</aside>
-  </section>
-
-  <div class="kpis" id="kpis"></div>
-  <div id="area-alerta"></div>
-
-  <section class="analise-grid" aria-labelledby="titulo-fluxo">
-    <div>
-      <div class="section-kicker">02 · Fluxo da carteira</div>
-      <h2 class="section-title" id="titulo-fluxo">Distribuição por etapa</h2>
-      <p class="section-lead">A posição de cada iniciativa ao longo do fluxo técnico e contratual. Selecione uma etapa para consultar os respectivos registros.</p>
-      <div class="barras" id="barras"></div>
-    </div>
-    <aside class="leitura-critica" aria-labelledby="titulo-critica">
-      <div class="section-kicker">Leitura crítica</div>
-      <h2 class="section-title" id="titulo-critica">O que os dados indicam</h2>
-      <div class="leitura-lista" id="leitura-critica"></div>
-    </aside>
-  </section>
-
-  <section class="monitoramento" aria-labelledby="titulo-monitoramento">
-    <div class="monitoramento-cab">
-      <div>
-        <div class="section-kicker">03 · Monitoramento da alta gestão</div>
-        <h2 class="section-title" id="titulo-monitoramento">Pontos para acompanhamento</h2>
-      </div>
-      <p>Recorte objetivo das situações que exigem observação da Reitoria, da SUMAI e da FAPEX no período de referência.</p>
-    </div>
-    <div class="monitoramento-lista" id="monitoramento"></div>
-  </section>
-
   <section class="institucional" aria-labelledby="titulo-institucional">
     <div>
-      <div class="section-kicker">04 · Leitura institucional</div>
-      <h2 class="section-title" id="titulo-institucional">Responsabilidades articuladas</h2>
+      <div class="section-kicker">01 · Contextualização</div>
+      <h2 class="section-title" id="titulo-institucional">Escopo e origem das informações</h2>
     </div>
     <div class="institucional-texto">
+      <p class="institucional-nota" style="padding-top:0;border-top:0;color:var(--tinta-suave)">Este relatório atende à solicitação de acompanhamento da Reitoria e apresenta, na data de referência, os processos relacionados a obras, reformas, serviços de engenharia e intervenções de infraestrutura acompanhados pela UFBA, pela SUMAI e pela FAPEX. As informações são extraídas automaticamente do quadro operacional do Trello e mantêm a etapa registrada em cada processo.</p>
       <div>
         <h3>SUMAI · UFBA</h3>
         <p>Conduz a dimensão técnica: projetos, especificações, orçamentos de referência e fiscalização da execução.</p>
@@ -454,13 +422,51 @@ header.topo h1{max-width:790px;margin:8px 0 0;font-family:var(--serif);font-size
     </div>
   </section>
 
+  <section class="sintese" aria-labelledby="titulo-sintese">
+    <div class="sintese-copy">
+      <div class="section-kicker">02 · Síntese executiva</div>
+      <h2 class="section-title" id="titulo-sintese">Posição da carteira</h2>
+      <p id="sintese-dinamica"></p>
+    </div>
+    <aside class="sintese-nota">As quantidades reproduzem os registros disponíveis no quadro na data indicada, sem classificação de desempenho.</aside>
+  </section>
+
+  <div class="kpis" id="kpis" hidden></div>
+  <div id="area-alerta"></div>
+
+  <section class="analise-grid" aria-labelledby="titulo-fluxo">
+    <div>
+      <div class="section-kicker">03 · Fluxo da carteira</div>
+      <h2 class="section-title" id="titulo-fluxo">Processos por etapa registrada no Trello</h2>
+      <p class="section-lead">O fluxo reproduz as listas do quadro operacional e mantém separadas as etapas de Projetos, TR e Cotação/Orçamento. A relação dos processos é apresentada logo após a distribuição.</p>
+      <div class="barras" id="barras"></div>
+    </div>
+    <aside class="leitura-critica" aria-labelledby="titulo-critica">
+      <div class="section-kicker">Relação dos registros</div>
+      <h2 class="section-title" id="titulo-critica">Processos agrupados por etapa</h2>
+      <div class="leitura-lista" id="leitura-critica"></div>
+    </aside>
+  </section>
+
+  <section class="monitoramento" aria-labelledby="titulo-monitoramento">
+    <div class="monitoramento-cab">
+      <div>
+        <div class="section-kicker">04 · Próximos marcos</div>
+        <h2 class="section-title" id="titulo-monitoramento">Registros de continuidade</h2>
+      </div>
+      <p>Esta seção apresenta apenas próximos marcos informados de forma estruturada nos registros disponíveis, sem dedução a partir da etapa atual.</p>
+    </div>
+    <!-- Limitação preservada: o modelo atual não possui um campo próprio para "Próximo marco". A apresentação abaixo consulta somente campos personalizados já existentes e não infere conteúdo nem altera a extração do Trello. -->
+    <div class="monitoramento-lista" id="monitoramento"></div>
+  </section>
+
   <section class="carteira" id="carteira" aria-labelledby="titulo-carteira">
     <div class="carteira-cab">
       <div>
-        <div class="section-kicker">05 · Carteira detalhada</div>
-        <h2 class="section-title" id="titulo-carteira">Obras e projetos</h2>
+        <div class="section-kicker">05 · Consulta detalhada</div>
+        <h2 class="section-title" id="titulo-carteira">Processos da carteira</h2>
       </div>
-      <p>Camada analítica para consulta individual. Use os filtros ou a busca e selecione um registro para ver seus detalhes.</p>
+      <p>Use os filtros ou a busca e selecione um registro para consultar as informações disponíveis no quadro.</p>
     </div>
     <div class="controles" id="abas"></div>
     <div class="lista-obras" id="lista"></div>
@@ -542,7 +548,25 @@ const TRAD_LABELS = {
   "ENCERRADO":"projeto encerrado",
   "SUMAI dispensada":"sem intervenção técnica da SUMAI"
 };
+const ORDEM_LISTAS = [
+  "Concepção",
+  "Projetos em Elaboração",
+  "TR em Elaboração",
+  "Cotação / Orçamento",
+  "Licitação / Contratação",
+  "Contrato Assinado",
+  "Em Execução",
+  "Concluído"
+];
 let filtroEtapa = "todas";
+
+const normaliza = s => String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+function campoCustom(o, nomeEsperado){
+  const item = Object.entries(o.custom_fields||{}).find(([nome,valor])=>
+    normaliza(nome).includes(normaliza(nomeEsperado)) && valor!==null && valor!==undefined && String(valor).trim()!=="");
+  if(!item) return "";
+  return Array.isArray(item[1]) ? item[1].join(", ") : String(item[1]);
+}
 
 function saudacaoHora(){
   const h = new Date().getHours();
@@ -556,7 +580,7 @@ function abrirPainel(info){
   document.getElementById("data-ger").textContent = D.gerado_em;
   document.getElementById("saud-linha").textContent = `${saudacaoHora()}, ${info.nome}.`;
   document.getElementById("saud-msg").textContent = info.msg ||
-    "Este relatório apresenta a posição consolidada das obras e reformas acompanhadas pela FAPEX em articulação com a SUMAI/UFBA, com ênfase nos marcos, prazos e pontos que requerem atenção institucional.";
+    "Este relatório apresenta a posição dos processos registrados no quadro operacional na data de referência.";
   render();
 }
 
@@ -568,6 +592,7 @@ function porEtapa(){
 
 function render(){
   const pe = porEtapa();
+  const pl = Object.fromEntries(ORDEM_LISTAS.map(e=>[e,D.obras.filter(o=>o.lista===e)]));
   const andamento = pe["Obra em andamento"];
   const valor = andamento.reduce((s,o)=>s+(o.valor||0),0);
   const vencidas = andamento.filter(o=>o.situacao && o.situacao[0]==="critico");
@@ -582,11 +607,7 @@ function render(){
   const lacunas = andamento.filter(o=>!o.vigencia||o.valor==null||!o.contratada).length;
 
   document.getElementById("sintese-dinamica").textContent =
-    `A carteira reúne ${total} iniciativas. ${andamento.length} estão em execução, com ${fmtBRL(valor)} em valores contratados nesta etapa. `+
-    `${contr} seguem no ciclo de contratação e ${prep} permanecem em preparação técnica. `+
-    (vencidas.length||aVencer.length
-      ? `O recorte registra ${plural(vencidas.length,"situação crítica","situações críticas")} e ${plural(aVencer.length,"item em atenção","itens em atenção")} quanto a prazo.`
-      : "Não há, na data de referência, alerta de prazo classificado como crítico ou em atenção.");
+    `Na data de referência, a carteira reúne ${total} processos distribuídos entre as etapas registradas no quadro operacional, da Concepção à conclusão.`;
 
   document.getElementById("kpis").innerHTML = [
     [total,"iniciativas na carteira"],
@@ -601,24 +622,27 @@ function render(){
   if(aVencer.length) fa.push(`<b>${aVencer.length}</b> ${aVencer.length===1?"contrato com vencimento":"contratos com vencimento"} nos próximos 30 dias`);
   document.getElementById("area-alerta").innerHTML = fa.length ? `<p class="alerta">Atenção: ${fa.join(" · ")}.</p>` : "";
 
-  const max = Math.max(1,...Object.values(pe).map(v=>v.length));
-  document.getElementById("barras").innerHTML = D.ordem_etapas.map(et=>{
-    const n=pe[et].length;
-    return `<div class="linha-barra" title="${esc(D.explicacao_etapa[et])}" onclick="setFiltro('${esc(et)}')">
+  const max = Math.max(1,...Object.values(pl).map(v=>v.length));
+  document.getElementById("barras").innerHTML = ORDEM_LISTAS.map(et=>{
+    const n=pl[et].length;
+    return `<div class="linha-barra" title="Etapa registrada: ${esc(et)}">
       <span class="rotulo">${esc(et)}</span>
       <span class="trilho"><span class="barra" style="width:${(100*n/max).toFixed(0)}%"></span></span>
       <span class="num">${n}</span></div>`;
   }).join("");
 
-  const leituras = [
-    ["Concentração", `${concentracao.total} iniciativa(s) estão em “${concentracao.etapa}”, a etapa com maior volume no recorte.`],
-    ["Criticidade", vencidas.length ? `${vencidas.length} contrato(s) em execução apresentam prazo vencido e demandam regularização.` : "Nenhum contrato em execução está classificado como crítico por prazo."],
-    ["Atenção", aVencer.length ? `${aVencer.length} contrato(s) têm vencimento previsto nos próximos 30 dias.` : "Nenhum vencimento contratual está sinalizado para os próximos 30 dias."],
-    ["Completude", lacunas ? `${lacunas} registro(s) em execução possuem lacuna em vigência, valor ou empresa contratada.` : "Os registros em execução apresentam vigência, valor e empresa contratada informados."]
-  ];
-  document.getElementById("leitura-critica").innerHTML = leituras.map(([titulo,texto],i)=>
-    `<div class="leitura-item"><span class="indice">0${i+1}</span><div><strong>${esc(titulo)}</strong><p>${esc(texto)}</p></div></div>`
-  ).join("");
+  document.getElementById("leitura-critica").innerHTML = ORDEM_LISTAS.map(et=>{
+    const itens=pl[et];
+    const relacao=itens.length
+      ? itens.map(o=>`${esc(o.numero||"—")} · ${esc(o.objeto)}`).join("<br>")
+      : "Nenhum processo registrado nesta etapa.";
+    return `<div class="leitura-item"><strong>${esc(et)} <span>${itens.length}</span></strong><p>${relacao}</p></div>`;
+  }).join("");
+
+  const marcos = D.obras.map(o=>({o,marco:campoCustom(o,"próximo marco")})).filter(item=>item.marco);
+  document.getElementById("monitoramento").innerHTML = marcos.length
+    ? marcos.map(({o,marco})=>`<div class="monitor-item"><span class="monitor-num">${esc(o.numero||"—")}</span><strong>${esc(o.objeto)}</strong><p>${esc(marco)}</p><span class="badge b-etapa">${esc(o.lista)}</span></div>`).join("")
+    : `<div class="marcos-vazio">Não há próximos marcos informados em campo estruturado nos registros disponíveis para esta data de referência.</div>`;
 
   const monitor = [
     [vencidas.length,"Regularização contratual",vencidas.length ? "Contratos com prazo vencido, sujeitos a renovação, encerramento ou outra providência de regularização." : "Sem contratos classificados como vencidos no recorte atual.",vencidas.length?"crítico":"acompanhamento"],
@@ -626,9 +650,7 @@ function render(){
     [contr,"Contratações em curso","Iniciativas em seleção ou já contratadas que ainda aguardam o início da execução.","acompanhamento"],
     [prep,"Preparação técnica","Iniciativas em projeto, especificação ou orçamento de referência, antes da fase de contratação.","acompanhamento"]
   ];
-  document.getElementById("monitoramento").innerHTML = monitor.map(([n,titulo,texto,nivel])=>
-    `<div class="monitor-item"><span class="monitor-num">${n}</span><strong>${esc(titulo)}</strong><p>${esc(texto)}</p><span class="nivel ${nivel}">${nivel==="atencao"?"atenção":esc(nivel)}</span></div>`
-  ).join("");
+  void concentracao; void lacunas; void monitor;
 
   renderAbas(pe);
   renderLista();
@@ -639,7 +661,7 @@ function renderAbas(pe){
     .concat(D.ordem_etapas.map(e=>[e,e,pe[e].length]).filter(a=>a[2]>0));
   document.getElementById("abas").innerHTML =
     abas.map(([id,rot,n])=>`<button class="aba ${filtroEtapa===id?"ativa":""}" onclick="setFiltro('${esc(id)}')">${esc(rot)} <span class="cont">${n}</span></button>`).join("")
-    + `<input id="busca" type="search" placeholder="Buscar obra, local ou empresa…" oninput="renderLista()">`;
+    + `<input id="busca" type="search" placeholder="Buscar processo, objeto, local ou empresa…" oninput="renderLista()">`;
 }
 
 function setFiltro(et){
@@ -658,14 +680,13 @@ function renderLista(){
   const ordem = Object.fromEntries(D.ordem_etapas.map((e,i)=>[e,i]));
   itens.sort((a,b)=>(ordem[a.etapa]-ordem[b.etapa])||((a.vigencia||"9")<(b.vigencia||"9")?-1:1));
   document.getElementById("lista").innerHTML = itens.map((o,i)=>{
-    const st = o.situacao ? `<span class="badge b-${o.situacao[0]==="apuracao"?"neutro":o.situacao[0]}">${esc(o.situacao[1])}</span>` : "";
     const val = o.valor!=null ? `<span class="badge b-neutro">${fmtBRL(o.valor)}</span>` : "";
     return `<button type="button" class="obra" onclick="abrirModal(${D.obras.indexOf(o)})" aria-label="Ver detalhes de ${esc(o.objeto)}">
       <div class="titulo">${esc(o.objeto)}</div>
-      <div class="lado"><span class="badge b-etapa">${esc(o.etapa)}</span>${st}${val}</div>
-      <div class="meta">projeto ${esc(o.numero)||"—"}${o.local?" · "+esc(o.local):""}${o.contratada?" · "+esc(o.contratada):""}</div>
+      <div class="lado"><span class="badge b-etapa">${esc(o.lista)}</span>${val}</div>
+      <div class="meta">processo ${esc(o.numero)||"—"}${o.local?" · "+esc(o.local):""}${o.contratada?" · "+esc(o.contratada):""}</div>
     </button>`;
-  }).join("") || `<div class="vazio">Nenhuma obra corresponde ao filtro.</div>`;
+  }).join("") || `<div class="vazio">Nenhum processo corresponde ao filtro.</div>`;
 }
 
 let focoAnterior = null;
@@ -673,21 +694,23 @@ function abrirModal(ix){
   focoAnterior = document.activeElement;
   const o = D.obras[ix];
   document.getElementById("m-titulo").textContent = o.objeto;
-  document.getElementById("m-num").textContent = "Projeto " + (o.numero||"—") + (o.local? " · "+o.local : "");
+  document.getElementById("m-num").textContent = "Processo " + (o.numero||"—") + (o.local? " · "+o.local : "");
   const linhas=[];
   const campo=(k,v)=>{ if(v) linhas.push(`<div class="campo"><div class="k">${k}</div><div class="v">${v}</div></div>`); };
-  campo("Etapa atual", `<span class="badge b-etapa">${esc(o.etapa)}</span><div style="margin-top:4px;font-size:.84rem;color:var(--ink2)">${esc(D.explicacao_etapa[o.etapa])}</div>`);
-  campo("Responsabilidade nesta etapa", esc(D.responsavel_etapa[o.etapa]));
+  campo("Identificação", esc(o.numero||"Não informada"));
+  campo("Unidade ou local", esc(o.local||"Não informado"));
+  campo("Etapa atual", `<span class="badge b-etapa">${esc(o.lista)}</span>`);
+  campo("Entregas concluídas", esc(campoCustom(o,"entregas concluídas")||"Não informadas em campo estruturado."));
+  campo("Próximo marco", esc(campoCustom(o,"próximo marco")||"Não informado em campo estruturado."));
   campo("Empresa contratada", o.contratada?esc(o.contratada):null);
   campo("Valor contratado", o.valor!=null?`<b>${fmtBRL(o.valor)}</b>`:null);
   campo("Orçamento de referência", o.orcado!=null?fmtBRL(o.orcado):null);
   campo("Vigência do contrato", o.vigencia?esc(o.vigencia):null);
-  if(o.situacao) campo("Situação de prazo", `<span class="badge b-${o.situacao[0]==="apuracao"?"neutro":o.situacao[0]}">${esc(o.situacao[1])}</span>`);
-  const obs = (o.labels||[]).map(l=>TRAD_LABELS[l]).filter(Boolean);
+  const obs = o.labels||[];
   if(obs.length) campo("Observações", obs.map(esc).join("; "));
-  if((o.responsaveis||[]).length) campo("Acompanhamento FAPEX", o.responsaveis.map(esc).join(", "));
   document.getElementById("m-campos").innerHTML = linhas.join("");
-  document.getElementById("m-resumo").innerHTML = (o.resumo||[]).map(p=>`<p>${esc(p)}</p>`).join("");
+  document.getElementById("m-resumo").innerHTML = `<div class="section-kicker" style="margin-bottom:12px">Situação atual e informações complementares</div>`+
+    ((o.resumo||[]).length ? o.resumo.map(p=>`<p>${esc(p)}</p>`).join("") : `<p>Não há informações complementares registradas.</p>`);
   document.getElementById("fundo-modal").style.display="block";
   document.getElementById("modal").style.display="flex";
   document.body.style.overflow="hidden";
