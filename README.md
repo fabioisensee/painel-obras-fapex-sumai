@@ -26,11 +26,14 @@ quadro operacional mantido pelas equipes técnica (SUMAI) e contratual (FAPEX).
 
 | Seção | O que apresenta |
 | --- | --- |
-| **Contextualização** | Escopo do relatório e a divisão de responsabilidades entre SUMAI e FAPEX. |
-| **Síntese executiva** | Quantitativo da carteira na data de referência. |
-| **Fluxo da carteira** | Distribuição dos processos pelas oito etapas do fluxo; cada etapa é clicável e filtra a consulta detalhada. |
-| **Próximos marcos** | Exibida apenas quando houver marcos informados em campo estruturado — nada é inferido. |
-| **Consulta detalhada** | Busca (sem distinção de acentos), filtros por etapa e ficha individual de cada processo: empresa, valor contratado, orçamento de referência, vigência e situação. |
+| **Resumo** | Uma frase com a situação geral (quantos processos em cada fase e o valor contratado das obras em execução) e cinco indicadores. |
+| **Etapas** | Quantos processos há em cada uma das oito etapas, da concepção à conclusão; clicar em uma etapa filtra a lista. |
+| **Próximas entregas** | Aparece apenas quando a próxima entrega de um processo foi informada. Nada é deduzido. |
+| **Processos** | Lista completa com busca e filtros. A ficha de cada processo mostra etapa, local, empresa, valor contratado, orçamento de referência, vigência e situação atual. |
+
+O texto é escrito para quem decide: fala das obras, não da ferramenta de
+acompanhamento. As etapas internas aparecem com nomes diretos ("Termo de referência",
+"Seleção da empresa") e as observações técnicas são traduzidas para linguagem comum.
 
 O documento é **informativo e somente leitura**: nenhuma alteração da carteira pode
 ser feita por meio dele. Pode ser impresso ou salvo em PDF diretamente pelo botão
