@@ -1,0 +1,4 @@
+demonstracao/
+node_modules/
+*.local.html
+.DS_Store

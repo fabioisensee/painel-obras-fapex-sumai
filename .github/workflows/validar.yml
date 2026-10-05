@@ -1,0 +1,26 @@
+name: Verificação de integridade
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    name: Relatório íntegro e autocontido
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validar index.html
+        run: node scripts/validar.mjs index.html
+      - name: Gerar e validar demonstração com dados fictícios
+        run: |
+          node scripts/gerar-demonstracao.mjs index.html demonstracao/index.html
+          node scripts/validar.mjs demonstracao/index.html
